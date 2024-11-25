@@ -1,0 +1,220 @@
+thanks
+
+On Sat, Nov 23, 2024 at 3:12 PM galaxy galaxy <replyto14@gmail.com> wrote:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Emails by Country Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea, button, select {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .output {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            min-height: 100px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .copy-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 8px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Extract Emails by Country Code</h2>
+    <p>Enter a list of emails below (separated by line breaks):</p>
+
+    <textarea id="emailInput" rows="10" placeholder="Paste your email list here..."></textarea>
+
+    <label for="domainSelect">Select Country Code (Domain Extension):</label>
+    <select id="domainSelect">
+        <!-- Add all country options here -->
+        <option value=".af">Afghanistan (.af)</option>
+        <option value=".am">Armenia (.am)</option>
+        <option value=".az">Azerbaijan (.az)</option>
+        <option value=".bh">Bahrain (.bh)</option>
+        <option value=".bd">Bangladesh (.bd)</option>
+        <option value=".bt">Bhutan (.bt)</option>
+        <option value=".bn">Brunei (.bn)</option>
+        <option value=".kh">Cambodia (.kh)</option>
+        <option value=".cn">China (.cn)</option>
+        <option value=".cy">Cyprus (.cy)</option>
+        <option value=".ge">Georgia (.ge)</option>
+        <option value=".in">India (.in)</option>
+        <option value=".id">Indonesia (.id)</option>
+        <option value=".ir">Iran (.ir)</option>
+        <option value=".iq">Iraq (.iq)</option>
+        <option value=".il">Israel (.il)</option>
+        <option value=".jp">Japan (.jp)</option>
+        <option value=".jo">Jordan (.jo)</option>
+        <option value=".kz">Kazakhstan (.kz)</option>
+        <option value=".kw">Kuwait (.kw)</option>
+        <option value=".kg">Kyrgyzstan (.kg)</option>
+        <option value=".la">Laos (.la)</option>
+        <option value=".lb">Lebanon (.lb)</option>
+        <option value=".my">Malaysia (.my)</option>
+        <option value=".mv">Maldives (.mv)</option>
+        <option value=".mn">Mongolia (.mn)</option>
+        <option value=".mm">Myanmar (.mm)</option>
+        <option value=".np">Nepal (.np)</option>
+        <option value=".kp">North Korea (.kp)</option>
+        <option value=".om">Oman (.om)</option>
+        <option value=".pk">Pakistan (.pk)</option>
+        <option value=".ps">Palestine (.ps)</option>
+        <option value=".ph">Philippines (.ph)</option>
+        <option value=".qa">Qatar (.qa)</option>
+        <option value=".ru">Russia (.ru)</option>
+        <option value=".sa">Saudi Arabia (.sa)</option>
+        <option value=".sg">Singapore (.sg)</option>
+        <option value=".kr">South Korea (.kr)</option>
+        <option value=".lk">Sri Lanka (.lk)</option>
+        <option value=".sy">Syria (.sy)</option>
+        <option value=".tw">Taiwan (.tw)</option>
+        <option value=".tj">Tajikistan (.tj)</option>
+        <option value=".th">Thailand (.th)</option>
+        <option value=".tl">Timor-Leste (.tl)</option>
+        <option value=".tr">Turkey (.tr)</option>
+        <option value=".tm">Turkmenistan (.tm)</option>
+        <option value=".ae">United Arab Emirates (.ae)</option>
+        <option value=".uz">Uzbekistan (.uz)</option>
+        <option value=".ye">Yemen (.ye)</option>
+        <option value=".al">Albania (.al)</option>
+        <option value=".ad">Andorra (.ad)</option>
+        <option value=".at">Austria (.at)</option>
+        <option value=".by">Belarus (.by)</option>
+        <option value=".be">Belgium (.be)</option>
+        <option value=".ba">Bosnia and Herzegovina (.ba)</option>
+        <option value=".bg">Bulgaria (.bg)</option>
+        <option value=".hr">Croatia (.hr)</option>
+        <option value=".cz">Czech Republic (.cz)</option>
+        <option value=".dk">Denmark (.dk)</option>
+        <option value=".ee">Estonia (.ee)</option>
+        <option value=".fi">Finland (.fi)</option>
+        <option value=".fr">France (.fr)</option>
+        <option value=".de">Germany (.de)</option>
+        <option value=".gr">Greece (.gr)</option>
+        <option value=".hu">Hungary (.hu)</option>
+        <option value=".is">Iceland (.is)</option>
+        <option value=".ie">Ireland (.ie)</option>
+        <option value=".it">Italy (.it)</option>
+        <option value=".lv">Latvia (.lv)</option>
+        <option value=".li">Liechtenstein (.li)</option>
+        <option value=".lt">Lithuania (.lt)</option>
+        <option value=".lu">Luxembourg (.lu)</option>
+        <option value=".mt">Malta (.mt)</option>
+        <option value=".md">Moldova (.md)</option>
+        <option value=".mc">Monaco (.mc)</option>
+        <option value=".me">Montenegro (.me)</option>
+        <option value=".nl">Netherlands (.nl)</option>
+        <option value=".mk">North Macedonia (.mk)</option>
+        <option value=".no">Norway (.no)</option>
+        <option value=".pl">Poland (.pl)</option>
+        <option value=".pt">Portugal (.pt)</option>
+        <option value=".ro">Romania (.ro)</option>
+        <option value=".sm">San Marino (.sm)</option>
+        <option value=".rs">Serbia (.rs)</option>
+        <option value=".sk">Slovakia (.sk)</option>
+        <option value=".si">Slovenia (.si)</option>
+        <option value=".us">United States (.us)</option>
+        <option value=".ar">Argentina (.ar)</option>
+        <option value=".br">Brazil (.br)</option>
+        <option value=".cl">Chile (.cl)</option>
+        <option value=".co">Colombia (.co)</option>
+        <option value=".pe">Peru (.pe)</option>
+        <option value=".ec">Ecuador (.ec)</option>
+        <option value=".mx">Mexico (.mx)</option>
+        <option value=".ca">Canada (.ca)</option>
+        <option value=".au">Australia (.au)</option>
+        <option value=".nz">New Zealand (.nz)</option>
+       <option value=".com">generally domain (.com)</option>
+    </select>
+
+    <label for="removeCom">Remove emails ending with .com:</label>
+    <input type="checkbox" id="removeCom">
+
+    <button onclick="extractEmails()">Extract Emails</button>
+
+    <h3>Extracted Emails:</h3>
+    <div class="output" id="output"></div>
+    <button class="copy-btn" onclick="copyToClipboard()">Copy All</button>
+
+    <script>
+        function extractEmails() {
+            // Get the email input text
+            var emailText = document.getElementById('emailInput').value;
+
+            // Get the selected domain extension
+            var selectedDomain = document.getElementById('domainSelect').value;
+
+            // Get the remove .com checkbox value
+            var removeCom = document.getElementById('removeCom').checked;
+
+            // Split the emails into an array by line breaks (new lines)
+            var emailList = emailText.split(/\n/);
+
+            // Create an array to hold emails that match the selected domain
+            var filteredEmails = [];
+
+            // Loop through the list of emails and check if they match the selected domain
+            emailList.forEach(function(email) {
+                if (email.trim().endsWith(selectedDomain) &&
+                    !(removeCom && email.trim().endsWith('.com'))) {
+                    filteredEmails.push(email.trim());
+                }
+            });
+
+            // Output the filtered emails
+            var outputDiv = document.getElementById('output');
+            if (filteredEmails.length > 0) {
+                outputDiv.textContent = filteredEmails.join('\n');
+            } else {
+                outputDiv.textContent = "No emails found with the selected domain.";
+            }
+        }
+
+        function copyToClipboard() {
+            var outputDiv = document.getElementById('output');
+            var range = document.createRange();
+            range.selectNode(outputDiv);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            try {
+                document.execCommand('copy');
+                alert('Copied to clipboard!');
+            } catch (err) {
+                alert('Failed to copy!');
+            }
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+
+</body>
+</html>
